@@ -1,24 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Camera Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CameraController" customModule="AppareilPhoto2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Gv-Dn-eJR">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMn-la-8t9" userLabel="rotation" customClass="BoutonArrondi" customModule="AppareilPhoto2" customModuleProvider="target">
+                                <rect key="frame" x="16" y="802" width="40" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="C2r-Xi-9yV"/>
+                                    <constraint firstAttribute="width" constant="40" id="mR3-Ww-E0v"/>
+                                </constraints>
+                                <state key="normal" image="rotation"/>
+                                <connections>
+                                    <action selector="rotateCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U88-Sq-4cp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVe-yf-HLh" userLabel="prendrePhoto">
+                                <rect key="frame" x="177" y="772" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="qoN-3b-SAe"/>
+                                    <constraint firstAttribute="width" constant="60" id="soh-Of-P8W"/>
+                                </constraints>
+                                <state key="normal" image="Camera"/>
+                                <connections>
+                                    <action selector="prendrePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IkR-3M-ITI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53b-1l-p9S" userLabel="librairie" customClass="BoutonArrondi" customModule="AppareilPhoto2" customModuleProvider="target">
+                                <rect key="frame" x="358" y="802" width="40" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="B09-Zq-aQ3"/>
+                                    <constraint firstAttribute="width" constant="40" id="FNO-9S-dgd"/>
+                                </constraints>
+                                <state key="normal" image="library"/>
+                                <connections>
+                                    <action selector="versLibrary:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JWL-dH-e8m"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7Gv-Dn-eJR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="0rj-7l-Afd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Gv-Dn-eJR" secondAttribute="trailing" id="4CV-bo-1N7"/>
+                            <constraint firstItem="CMn-la-8t9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="AHz-75-Sv5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="53b-1l-p9S" secondAttribute="bottom" constant="20" id="DaE-BM-6uu"/>
+                            <constraint firstItem="7Gv-Dn-eJR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IKL-Vz-2Ei"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IVe-yf-HLh" secondAttribute="bottom" constant="30" id="PDh-9I-87K"/>
+                            <constraint firstAttribute="bottom" secondItem="7Gv-Dn-eJR" secondAttribute="bottom" constant="34" id="SpP-Va-nIJ"/>
+                            <constraint firstItem="IVe-yf-HLh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UPi-rr-J9y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CMn-la-8t9" secondAttribute="bottom" constant="20" id="pAg-29-0Vq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="53b-1l-p9S" secondAttribute="trailing" constant="16" id="wh6-Ql-WMR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="camerVue" destination="7Gv-Dn-eJR" id="Qmy-cO-8rq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Camera" width="70" height="70"/>
+        <image name="library" width="64" height="64"/>
+        <image name="rotation" width="64" height="64"/>
+    </resources>
 </document>
